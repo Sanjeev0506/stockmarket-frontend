@@ -5,11 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const statusMessage = document.getElementById("status-message");
   const predictionResult = document.getElementById("prediction-result");
 
+  const BASE_URL = "https://stock-backend-bi6l.onrender.com";
   let stockChart = null;
 
   async function fetchCompanies() {
     try {
-      const response = await fetch("http://127.0.0.1:8000/companies");
+      const response = await fetch(`${BASE_URL}/companies`);
       if (!response.ok) throw new Error("Failed to load company list.");
       const companies = await response.json();
 
@@ -37,11 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
     predictionResult.textContent = "";
 
     try {
-      const stockRes = await fetch(`http://127.0.0.1:8000/stock/${ticker}`);
+      const stockRes = await fetch(`${BASE_URL}/stock/${ticker}`);
       if (!stockRes.ok) throw new Error("Failed to fetch stock data");
       const stockData = await stockRes.json();
 
-      const predictRes = await fetch(`http://127.0.0.1:8000/predict/${ticker}`);
+      const predictRes = await fetch(`${BASE_URL}/predict/${ticker}`);
       if (!predictRes.ok) throw new Error("Prediction failed");
       const predictData = await predictRes.json();
 
