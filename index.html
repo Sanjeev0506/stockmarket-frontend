@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stock Market Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+  <header>
+    <h1>Stock Market Dashboard</h1>
+    <p class="subtitle">Select a company to view prediction and chart</p>
+  </header>
+
+  <main>
+    <section id="company-list" class="company-list"></section>
+
+    <section id="chart-section" class="chart-section hidden">
+      <canvas id="stock-chart"></canvas>
+      <div id="status-message" class="status-message"></div>
+      <div id="prediction-result" class="prediction-result"></div>
+      <div class="chart-info">
+        <p>Chart shows closing prices for the past 30 trading days.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+  <p>Made By Sanjeev</p>
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/sanjeevb1412/" target="_blank">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+    <a href="https://github.com/Sanjeev0506" target="_blank">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
